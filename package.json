@@ -1,0 +1,51 @@
+{
+  "name": "oneshop-preview",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "restart": "run-s build start",
+    "lint": "concurrently \"ts-standard --fix\" \"npx stylelint \"styles/**/*.scss\" --fix\""
+  },
+  "ts-standard": {
+    "ignore": [
+      "next-env.d.ts"
+    ]
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn build "
+    }
+  },
+  "dependencies": {
+    "autoprefixer": "^10.1.0",
+    "next": "10.0.3",
+    "postcss": "^8.2.1",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "tailwindcss": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.12",
+    "@types/react": "^17.0.0",
+    "concurrently": "^5.3.0",
+    "cssnano-webpack-plugin": "^1.0.3",
+    "husky": "^4.3.5",
+    "npm-run-all": "^4.1.5",
+    "postcss-custom-media": "^7.0.8",
+    "sass": "^1.30.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-standard": "^20.0.0",
+    "ts-standard": "^10.0.0",
+    "typescript": "^4.1.3",
+    "uglifyjs-webpack-plugin": "^2.2.0"
+  }
+}
